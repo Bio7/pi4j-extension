@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.bio7.pi4j.library.feature"
-      label="Feature"
+      label="pi4j feature"
       version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
@@ -18,7 +18,6 @@
 
    <plugin
          id="org.bio7.pi4j.library"
-         version="1.0.0.qualifier"
-         unpack="true"/>
+         version="1.0.0.qualifier"/>
 
 </feature>

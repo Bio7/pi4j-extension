@@ -6,5 +6,9 @@
    <feature id="org.bio7.pi4j.library.feature">
       <category name="pi4j"/>
    </feature>
-   <category-def name="pi4j" label="pi4j"/>
+   <category-def name="pi4j" label="pi4j">
+      <description>
+         The pi4j library
+      </description>
+   </category-def>
 </site>
