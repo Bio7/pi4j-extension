@@ -5,3 +5,4 @@ bin/
 *.class
 *.lastUpdated
 org.bio7.pi4j.library/lib/
+*.DS_Store
