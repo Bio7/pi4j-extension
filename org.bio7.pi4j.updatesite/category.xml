@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="pi4j">
+      The pi4j libraries bundled as an Eclipse plugin.
+   </description>
+   <feature id="org.bio7.pi4j.library.feature">
+      <category name="pi4j"/>
+   </feature>
+   <category-def name="pi4j" label="pi4j"/>
+</site>

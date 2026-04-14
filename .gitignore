@@ -1,0 +1,7 @@
+target/
+bin/
+.settings/
+.metadata/
+*.class
+*.lastUpdated
+org.bio7.pi4j.library/lib/
