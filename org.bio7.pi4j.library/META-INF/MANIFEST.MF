@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.bio7.pi4j.library
 Bundle-Version: 1.0.0.qualifier
 Eclipse-BundleShape: dir
 Eclipse-BuddyPolicy: registered
-Eclipse-RegisterBuddy: com.eco.bio7.redit
+Eclipse-RegisterBuddy: com.eco.bio7
 Export-Package: com.pi4j,
  com.pi4j.boardinfo.datareader,
  com.pi4j.boardinfo.definition,
