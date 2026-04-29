@@ -2,16 +2,25 @@ name: Deploy Update Site to GitHub Pages (docs/)
 
 on:
   push:
-    branches: [ main ]  # Trigger on pushes to the main branch
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Required to push to the repository
+      pages: write      # Required to deploy to GitHub Pages
+      id-token: write   # Required for GitHub Pages deployment
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history to avoid issues with Git operations
+          fetch-depth: 0
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -24,19 +33,15 @@ jobs:
 
       - name: Prepare docs/ folder
         run: |
-          # Create docs/ folder and clear it
           mkdir -p docs
           rm -rf docs/*
-
-          # Copy the update site files to docs/
           cp -r org.bio7.pi4j.updatesite/target/repository/* docs/
 
-      - name: Commit and push docs/ to main branch
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
 
-          # Add, commit, and push docs/ to the main branch
-          git add docs/
-          git commit -m "Deploy update site to docs/ [skip ci]"
-          git push
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
